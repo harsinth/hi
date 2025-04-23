@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Your Account</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .wrapper {
+      display: flex;
+      width: 100%;
+    }
+    .left-panel {
+      width: 50%;
+      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBzkrBLHcM3w92ezTEGjKWEAaUo-SwMeInng&s');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+      color: white;
+      padding: 80px 40px;
+      position: relative;
+    }
+    .left-panel::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.35);
+      z-index: 1;
+    }
+    .motivational-box {
+      font-size: 24px;
+      font-weight: 300;
+      max-width: 500px;
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 10%;
+      position: relative;
+      z-index: 2;
+      line-height: 1.6;
+    }
+    .motivational-box strong {
+      font-weight: 600;
+      color: #fff;
+    }
+    .form-container {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      background-color: #fff;
+    }
+    .form-container h2 {
+      margin-bottom: 20px;
+      font-weight: 600;
+      width: 100%;
+      max-width: 320px;
+      text-align: left;
+      color: #333;
+    }
+    .input-wrapper {
+      width: 100%;
+      max-width: 320px;
+      margin-bottom: 15px;
+    }
+    .input-wrapper input {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: 'Poppins', sans-serif;
+    }
+    .submit-btn {
+      width: 100%;
+      max-width: 320px;
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    .submit-btn:hover {
+      background-color: #1d4ed8;
+    }
+    .divider-text {
+      width: 100%;
+      max-width: 320px;
+      text-align: center;
+      margin: 20px 0;
+      color: #888;
+      font-size: 13px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+    }
+    .divider-text::before,
+    .divider-text::after {
+      content: '';
+      flex-grow: 1;
+      height: 1px;
+      background-color: #ccc;
+      margin: 0 10px;
+    }
+    .social-btns {
+      display: flex;
+      gap: 15px;
+      width: 100%;
+      max-width: 320px;
+      justify-content: space-between;
+    }
+    .social-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 14px;
+      background-color: #fff;
+      transition: background-color 0.2s ease;
+      color: #333;
+    }
+    .social-btn:hover {
+      background-color: #f0f0f0;
+    }
+    .social-btn img {
+      width: 20px;
+      height: 20px;
+    }
+    .already-member {
+      margin-top: 25px;
+      font-size: 14px;
+      color: #555;
+    }
+    .already-member a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .already-member a:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="wrapper">
+    <div class="left-panel">
+      <p class="motivational-box">Do what you love, and success will follow.<br> - Steve Jobs</p>
+    </div>
+    <div class="form-container">
+      <h2>Sign Up</h2>
+      <div class="input-wrapper">
+        <input type="email" id="email" placeholder="Enter your email" required>
+      </div>
+      <div class="input-wrapper">
+        <input type="password" id="password" placeholder="Create a password" required>
+      </div>
+      <div class="input-wrapper">
+        <input type="password" id="confirmPassword" placeholder="Re-enter your password" required>
+      </div>
+      <button class="submit-btn" id="registerButton">Sign Up Now</button>
+
+      <p class="divider-text">or</p>
+
+      <div class="social-btns">
+        <div class="social-btn"> <img src="https://img.icons8.com/color/24/google-logo.png" alt="Google"/> Google </div>
+        <div class="social-btn"> <img src="https://img.icons8.com/color/24/facebook-new.png" alt="Facebook"/> Facebook </div>
+      </div>
+      <div class="already-member">
+        Already have an account? <a href="login.html">Log In</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const registerButton = document.getElementById('registerButton');
+    const emailField = document.getElementById('email');
+    const passwordField = document.getElementById('password');
+    const confirmPasswordField = document.getElementById('confirmPassword');
+
+    registerButton.addEventListener('click', function(event) {
+      const email = emailField.value.trim();
+      const password = passwordField.value.trim();
+      const confirmPassword = confirmPasswordField.value.trim();
+
+      if (email === '' || password === '' || confirmPassword === '') {
+        alert('Please fill in all fields.');
+        return; 
+      }
+
+      if (!email.includes('@') || !email.includes('.')) {
+        alert('Please enter a valid email address.');
+        return; 
+      }
+
+      if (password !== confirmPassword) {
+        alert('Your passwords do not match.');
+        return; 
+      }
+
+      console.log('Account successfully created!');
+      alert('Welcome, your account has been successfully created!');
+    });
+  </script>
+</body>
+</html>
